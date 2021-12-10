@@ -1,7 +1,5 @@
 import exceptions.CalculationException
-import io.mockk.every
 import io.mockk.impl.annotations.InjectMockKs
-import io.mockk.spyk
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
 
@@ -21,8 +19,6 @@ class Day01Test {
     @Test
     fun countLagerShouldReturnZeroForOneNumberInput() {
         val input = listOf(123)
-        val day1Spy = spyk<Day01>()
-        every { day1Spy.readInputFile() } returns input
 
         val countLarger = day1.countLarger(input)
 
@@ -32,8 +28,6 @@ class Day01Test {
     @Test
     fun countLagerShouldReturnZeroWhenSecondNumberIsSmaller() {
         val input = listOf(123, 12)
-        val day1Spy = spyk<Day01>()
-        every { day1Spy.readInputFile() } returns input
 
         val countLarger = day1.countLarger(input)
 
@@ -43,8 +37,6 @@ class Day01Test {
     @Test
     fun countLagerShouldReturnWhenSecondNumberIsLarger() {
         val input = listOf(123, 321)
-        val day1Spy = spyk<Day01>()
-        every { day1Spy.readInputFile() } returns input
 
         val countLarger = day1.countLarger(input)
 
@@ -54,8 +46,6 @@ class Day01Test {
     @Test
     fun countLagerShouldReturnHandleLargeDatasets() {
         val input = listOf(199, 200, 208, 210, 200, 207, 240, 269, 260, 263)
-        val day1Spy = spyk<Day01>()
-        every { day1Spy.readInputFile() } returns input
 
         val countLarger = day1.countLarger(input)
 
@@ -65,8 +55,6 @@ class Day01Test {
     @Test
     fun countLagerShouldReturnHandleEmptyList() {
         val input = emptyList<Int>()
-        val day1Spy = spyk<Day01>()
-        every { day1Spy.readInputFile() } returns input
 
         val countLarger = day1.countLarger(input)
 
@@ -76,8 +64,6 @@ class Day01Test {
     @Test
     fun sumNextThreeShouldReturnSumOfNextThreeElementsStartingFromIndex0() {
         val input = listOf(1, 1, 1)
-        val day1Spy = spyk<Day01>()
-        every { day1Spy.readInputFile() } returns input
 
         val countLarger = day1.sumNextThree(input, 0)
 
@@ -87,8 +73,6 @@ class Day01Test {
     @Test
     fun sumNextThreeShouldReturnSumOfNextThreeElementsStartingFromIndex1() {
         val input = listOf(1, 2, 2, 2)
-        val day1Spy = spyk<Day01>()
-        every { day1Spy.readInputFile() } returns input
 
         val countLarger = day1.sumNextThree(input, 1)
 
@@ -98,8 +82,6 @@ class Day01Test {
     @Test(expected = CalculationException::class)
     fun sumNextThreeShouldThrowExceptionWhenElementsNotPresent() {
         val input = listOf(1, 2)
-        val day1Spy = spyk<Day01>()
-        every { day1Spy.readInputFile() } returns input
 
         day1.sumNextThree(input, 1)
     }
@@ -107,8 +89,6 @@ class Day01Test {
     @Test
     fun countLargerGroupsShouldReturnZeroForSingleGroup() {
         val input = listOf(1, 2, 3)
-        val day1Spy = spyk<Day01>()
-        every { day1Spy.readInputFile() } returns input
 
         val count = day1.countGroups(input)
 
@@ -118,8 +98,6 @@ class Day01Test {
     @Test
     fun countLargerGroupsShouldReturnOneWhenLargerGroupPresent() {
         val input = listOf(1, 2, 3, 4)
-        val day1Spy = spyk<Day01>()
-        every { day1Spy.readInputFile() } returns input
 
         val count = day1.countGroups(input)
 
@@ -129,8 +107,6 @@ class Day01Test {
     @Test
     fun countLargerGroupsShouldReturnZeroWhenNoLargerGroupPresent() {
         val input = listOf(1, 2, 3, 0)
-        val day1Spy = spyk<Day01>()
-        every { day1Spy.readInputFile() } returns input
 
         val count = day1.countGroups(input)
 
@@ -140,8 +116,6 @@ class Day01Test {
     @Test
     fun countLargerGroupsShouldWorkForLargeDataset() {
         val input = listOf(199, 200, 208, 210, 200, 207, 240, 269, 260, 263)
-        val day1Spy = spyk<Day01>()
-        every { day1Spy.readInputFile() } returns input
 
         val count = day1.countGroups(input)
 
