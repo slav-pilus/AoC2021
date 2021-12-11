@@ -5,4 +5,5 @@ fun main() {
     println("day1 part2: " + Day01().solvePart2())
     println("day2 part1: " + Day02().solvePart1())
     println("day2 part2: " + Day02().solvePart2())
+    println("day3 part1: " + Day03().solve())
 }
