@@ -51,4 +51,23 @@ class Day02Test {
         assertThat(depth).isEqualTo(9)
     }
 
+    @Test
+    fun getMeasurementsHandleDown() {
+        val input = listOf("down 2", "forward 2")
+
+        val measurements = day2.getMeasurements(input)
+
+        assertThat(measurements.depth).isEqualTo(4)
+        assertThat(measurements.horizontal).isEqualTo(2)
+    }
+
+    @Test
+    fun getMeasurementsHandleUp() {
+        val input = listOf("down 4", "up 2", "forward 2")
+
+        val measurements = day2.getMeasurements(input)
+
+        assertThat(measurements.depth).isEqualTo(4)
+        assertThat(measurements.horizontal).isEqualTo(2)
+    }
 }

@@ -1,32 +1,36 @@
 class Day02 {
-    val measurements = object {
-        var aim = 0
-        var depth = 0
 
-    }
+    data class Measurements(val horizontal: Int, val depth: Int)
+
 
     fun solvePart1(): Int {
         return calculateDepth(readInputFile()) * calculateHorizontal(readInputFile())
     }
 
     fun solvePart2(): Int {
+        val measurements = getMeasurements(readInputFile())
+        return measurements.horizontal * measurements.depth
+    }
+
+    fun getMeasurements(input: List<String>): Measurements {
         var horizontal = 0
         var depth = 0
         var aim = 0
-        readInputFile().forEach {
+        input.forEach {
             val currentValue = Integer.parseInt(it.split(" ")[1])
             if (it.startsWith("forward")) {
                 horizontal += currentValue
                 depth += aim * currentValue
             }
             if (it.startsWith("up")) {
-               aim -= currentValue
+                aim -= currentValue
             }
             if (it.startsWith("down")) {
                 aim += currentValue
             }
         }
-        return 0
+
+        return Measurements(horizontal, depth)
     }
 
     fun calculateHorizontal(input: List<String>): Int {
