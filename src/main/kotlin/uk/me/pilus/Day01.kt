@@ -1,4 +1,6 @@
-import exceptions.CalculationException
+package uk.me.pilus
+
+import uk.me.pilus.exceptions.CalculationException
 
 private const val GROUP_SIZE = 3
 
@@ -13,7 +15,7 @@ class Day01 {
     }
 
     fun readInputFile(): List<Int> {
-        return Utils.readFileToIntList("day1.txt")
+        return Utils.readFileToIntList("/day1.txt")
     }
 
     fun countLarger(input: List<Int>): Int {

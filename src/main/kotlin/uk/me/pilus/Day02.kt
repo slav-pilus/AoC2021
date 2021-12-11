@@ -1,3 +1,5 @@
+package uk.me.pilus
+
 class Day02 {
 
     data class Measurements(val horizontal: Int, val depth: Int)
@@ -47,7 +49,7 @@ class Day02 {
     }
 
     fun readInputFile(): List<String> {
-        return Utils.readFileToList("day2.txt")
+        return Utils.readFileToList("/day2.txt")
     }
 
 

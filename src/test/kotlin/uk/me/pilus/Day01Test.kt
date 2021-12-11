@@ -1,7 +1,10 @@
-import exceptions.CalculationException
+package uk.me.pilus
+
+import uk.me.pilus.exceptions.CalculationException
 import io.mockk.impl.annotations.InjectMockKs
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
+import uk.me.pilus.Day01
 
 class Day01Test {
 

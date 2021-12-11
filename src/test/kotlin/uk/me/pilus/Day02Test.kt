@@ -1,3 +1,5 @@
+package uk.me.pilus
+
 import io.mockk.impl.annotations.InjectMockKs
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
